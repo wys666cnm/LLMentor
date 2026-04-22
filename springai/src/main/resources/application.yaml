@@ -5,4 +5,4 @@ spring:
     dashscope:
       api-key: @dashscope.api.key@
 server:
-  port: 8088
+  port: 8062

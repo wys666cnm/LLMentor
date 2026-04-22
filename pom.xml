@@ -24,6 +24,7 @@
         <module>mcp/mcp-server-stdio</module>
         <module>mcp/mcp-server-streamable</module>
         <module>mcp/mcp-client</module>
+        <module>rag</module>
     </modules>
 
     <properties>
