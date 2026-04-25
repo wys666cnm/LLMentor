@@ -21,9 +21,17 @@
     </properties>
 
     <dependencies>
+        <!--   springboot启动类配置     -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--    JSON转换    -->
+        <dependency>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+            <version>2.0.60</version>
+            <scope>compile</scope>
         </dependency>
         <!--    流式输出    -->
         <dependency>

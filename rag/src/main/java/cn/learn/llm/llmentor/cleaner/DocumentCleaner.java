@@ -5,6 +5,7 @@ import org.springframework.ai.document.Document;
 
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -26,6 +27,7 @@ public class DocumentCleaner {
             }
 
             String text = doc.getText();
+            Map<String, Object> metadata = doc.getMetadata();
 
             // 1. 去掉多余空白字符（空格、制表符、换行等）
             text = text.replaceAll("\\s+", " ").trim();
@@ -48,7 +50,7 @@ public class DocumentCleaner {
 
             text = String.join("\n", seen);
 
-            return new Document(text);
+            return new Document(text, metadata);
         }).collect(Collectors.toList());
     }
 

@@ -44,6 +44,11 @@ public class RagEmbeddingController {
             throw new RuntimeException(e);
         }
 
+        // 给每个文档添加文件名元数据
+        for (Document document : documents) {
+            document.getMetadata().put("fileName", files.getName());
+        }
+
         //2、文档清洗
         documents = DocumentCleaner.cleanDocuments(documents);
 

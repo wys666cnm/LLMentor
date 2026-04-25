@@ -90,7 +90,7 @@ public class OverlapParagraphTextSplitter extends TextSplitter {
         for (Document doc : documents) {
             List<String> chunks = splitText(doc.getText());
             for (String chunk : chunks) {
-                result.add(new Document(chunk));
+                result.add(new Document(chunk, doc.getMetadata()));
             }
         }
         return result;

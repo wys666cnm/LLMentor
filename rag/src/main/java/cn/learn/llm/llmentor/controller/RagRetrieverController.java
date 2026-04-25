@@ -16,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Flux;
 
 import java.util.List;
 import java.util.Map;
@@ -62,6 +61,13 @@ public class RagRetrieverController implements InitializingBean {
         return sb.toString();
     }
 
+    /**
+     * 自己拼装提示词
+     *
+     * @param query
+     * @param threshold
+     * @return
+     */
     @GetMapping("/retrieve")
     public String retrieve(String query, double threshold) {
         //1、向量语义相似度检索
@@ -87,10 +93,35 @@ public class RagRetrieverController implements InitializingBean {
                 {documents}
                 
                 用户问题: {question}
+                
+                输出格式：
+                最终帮我汇总成一个markdown格式的答案，答案中请包含参考文档的标题和内容。最好是做一个排版，让答案更易读。
+                例如
+                一、
+                 1.1、sajsa
+                  1.1.1、sasas
+                  .......
+                 1.2、asasa
+                  1.2.1、sasa
+                二、
+                 2.1、asasa
+                 .......
+                  2.1.1、asasa
                 """;
         PromptTemplate prompt = new PromptTemplate(promptTemplate);
         Prompt realPrompt = prompt.create(Map.of("documents", documentContent, "question", query));
         return chatModel.call(realPrompt).getResult().getOutput().getText();
+    }
+
+    /**
+     * 使用内置的提示词模板
+     *
+     * @param query
+     * @return
+     */
+    @GetMapping("/retrieveAdvisor")
+    public String retrieveAdvisor(String query) {
+        return chatClient.prompt(query).call().content();
     }
 
 
@@ -118,7 +149,7 @@ public class RagRetrieverController implements InitializingBean {
                 // 设置 ChatClient 中 ChatModel 的 Options 参数
                 .defaultOptions(
                         DashScopeChatOptions.builder()
-                                .withTopP(0.7)
+                                .withTopP(0.5)
                                 .build()
                 ).build();
     }

@@ -15,7 +15,7 @@ spring:
         dimensions: 768
         max-document-batch-size: 9
         initialize-schema: true
-        table-name: vector_st
+        table-name: vector_st  # special_equipment_st
   datasource: # 数据源配置
     url: jdbc:postgresql://192.168.43.53:5433/rag_test # 记得改成你自己的
     username: pgvector # 记得改成你自己的
