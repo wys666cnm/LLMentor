@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: LLMentorLearn_langchain4j
+  ai:
+    dashscope: # 大模型配置
+      api-key: @dashscope.api.key@
+#      embedding: # embedding（向量化配置）
+#        options:
+#          model: text-embedding-v4 # 向量模型
+#          dimensions: 768  # 向量维度（几维向量）
+#    vectorstore: # 向量数据库配置
+#      pgvector:
+#        index-type: hnsw
+#        distance-type: cosine_distance
+#        dimensions: 768
+#        max-document-batch-size: 9
+#        initialize-schema: true
+#        table-name: vector_st  # special_equipment_st
+#  datasource: # 数据源配置
+#    url: jdbc:postgresql://192.168.43.53:5433/rag_test # 记得改成你自己的
+#    username: pgvector # 记得改成你自己的
+#    password: pgvector666 # 记得改成你自己的
+
+server:
+  port: 8071
+  tomcat:
+    max-http-header-size: 16KB
+    relaxed-path-chars: |
+      \
+    relaxed-query-chars: |
+      \  
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    org.springframework.ai: DEBUG          # Spring AI 详细日志（关键）
+    org.apache.tomcat: INFO
+    org.springframework.web: DEBUG           # 打印请求路径、参数
+    org.springframework.web.servlet: DEBUG   # 打印 MVC 详细流程
+
+

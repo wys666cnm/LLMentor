@@ -134,6 +134,13 @@ public class SqlQueryService {
         return sql;
     }
 
+    /**
+     * 调用大模型生成SQL并且执行，转换成对应的实体类
+     *
+     * @param query
+     * @param clazz
+     * @return
+     */
     public Object sqlQuery(String query, Class clazz) {
         if (StringUtils.isBlank(query)) {
             return null;

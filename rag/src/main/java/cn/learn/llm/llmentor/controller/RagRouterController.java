@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * 路由控制器
+ *
  * @author lianglei
  * @version 1.0
  * @date 2026/4/25 21:39
@@ -38,7 +40,7 @@ public class RagRouterController {
     }
 
     @RequestMapping("/routeQuery")
-    public String ragQuery(HttpServletResponse response, @RequestParam String question) {
+    public String ragQuery(HttpServletResponse response, @RequestParam("question") String question) {
         response.setCharacterEncoding("UTF-8");
 
         String databaseType = queryRouteService.route(question);

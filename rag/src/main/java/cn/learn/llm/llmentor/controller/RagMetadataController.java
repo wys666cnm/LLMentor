@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
+ * 元数据检索控制器
+ *
  * @author lianglei
  * @version 1.0
  * @date 2026/4/25 13:22

@@ -18,6 +18,8 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * 文档分块控制器
+ *
  * @author lianglei
  * @version 1.0
  * @date 2026/4/22 20:20

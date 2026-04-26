@@ -19,6 +19,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
+ * rag查询重写控制器
+ *
  * @author lianglei
  * @version 1.0
  * @date 2026/4/25 20:55

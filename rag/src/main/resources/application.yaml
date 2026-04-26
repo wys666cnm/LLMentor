@@ -20,6 +20,8 @@ spring:
     url: jdbc:postgresql://192.168.43.53:5433/rag_test # 记得改成你自己的
     username: pgvector # 记得改成你自己的
     password: pgvector666 # 记得改成你自己的
+  elasticsearch:
+    uris: http://192.168.43.53:9200
 
 server:
   port: 8072

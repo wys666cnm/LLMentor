@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>cn.learn.llm</groupId>
         <artifactId>LLMentorLearn</artifactId>
@@ -12,28 +11,41 @@
     </parent>
 
     <groupId>cn.learn.llm</groupId>
-    <artifactId>springai</artifactId>
+    <artifactId>langchain4j</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>springai</name>
+    <name>langchain4j</name>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.ai.alibaba.version>1.1.0.0</spring.ai.alibaba.version>
     </properties>
 
     <dependencies>
-        <!--   流式输出     -->
+        <!--   spring启动类配置     -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--  流失输出配置  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
-        <!-- 百炼大模型依赖 -->
+
+        <!--  langchain4j核心依赖包  -->
         <dependency>
-            <groupId>com.alibaba.cloud.ai</groupId>
-            <artifactId>spring-ai-alibaba-starter-dashscope</artifactId>
-            <version>1.1.2.2</version>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j</artifactId>
+            <version>1.8.0</version>
         </dependency>
+        <!--  langchain4j的starter  -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-open-ai-spring-boot-starter</artifactId>
+            <version>1.8.0-beta15</version>
+        </dependency>
+
     </dependencies>
+
 </project>

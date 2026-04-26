@@ -22,6 +22,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
+ * RAG检索控制器
+ *
  * @author lianglei
  * @version 1.0
  * @date 2026/4/24 21:40

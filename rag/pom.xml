@@ -81,11 +81,22 @@
             <artifactId>spring-ai-starter-vector-store-pgvector</artifactId>
             <version>1.1.0</version>
         </dependency>
-
+        <!-- 支持chatClient实现检索   -->
         <dependency>
             <groupId>org.springframework.ai</groupId>
             <artifactId>spring-ai-advisors-vector-store</artifactId>
             <version>1.1.0</version>
+        </dependency>
+        <!--   导入es支持Java依赖     -->
+        <dependency>
+            <groupId>co.elastic.clients</groupId>
+            <artifactId>elasticsearch-java</artifactId>
+            <version>8.19.10</version>
+        </dependency>
+        <!--    导入es数据读写启动类    -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
         </dependency>
 
         <dependency>
