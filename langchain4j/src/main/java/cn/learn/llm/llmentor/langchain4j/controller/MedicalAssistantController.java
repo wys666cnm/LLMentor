@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
 /**
+ * 医疗助手控制器
+ *
  * @author lianglei
  * @version 1.0
  * @date 2026/4/26 12:39

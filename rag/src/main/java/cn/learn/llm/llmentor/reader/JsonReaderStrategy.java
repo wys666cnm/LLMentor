@@ -6,7 +6,6 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
-import javax.print.Doc;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;

@@ -26,6 +26,7 @@
         <module>mcp/mcp-client</module>
         <module>rag</module>
         <module>langchain4j</module>
+        <module>agent/general-agent</module>
     </modules>
 
     <properties>

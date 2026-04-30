@@ -32,7 +32,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
-
         <!--  langchain4j核心依赖包  -->
         <dependency>
             <groupId>dev.langchain4j</groupId>
@@ -43,6 +42,12 @@
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-open-ai-spring-boot-starter</artifactId>
+            <version>1.8.0-beta15</version>
+        </dependency>
+        <!--  langchain4j的启动starter  -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-spring-boot-starter</artifactId>
             <version>1.8.0-beta15</version>
         </dependency>
 

@@ -11,6 +11,8 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
+ * 智能旅行规划控制器
+ *
  * @author lianglei
  * @version 1.0
  * @date 2026/4/26 14:36

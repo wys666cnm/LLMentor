@@ -4,10 +4,12 @@ spring:
   ai:
     dashscope: # 大模型配置
       api-key: @dashscope.api.key@
+      model: qwen-plus
       embedding: # embedding（向量化配置）
         options:
           model: text-embedding-v4 # 向量模型
           dimensions: 768  # 向量维度（几维向量）
+    # 向量数据库配置
     vectorstore: # 向量数据库配置
       pgvector:
         index-type: hnsw
@@ -16,12 +18,20 @@ spring:
         max-document-batch-size: 9
         initialize-schema: true
         table-name: vector_st  # special_equipment_st
+    # pgvector数据库数据源配置
   datasource: # 数据源配置
-    url: jdbc:postgresql://192.168.43.53:5433/rag_test # 记得改成你自己的
+    url: jdbc:postgresql://192.168.43.54:5433/rag_test # 记得改成你自己的
     username: pgvector # 记得改成你自己的
     password: pgvector666 # 记得改成你自己的
+    # elasticsearch 数据库配置
   elasticsearch:
-    uris: http://192.168.43.53:9200
+    uris: http://192.168.43.54:9200
+    # neo4j 数据库配置
+  neo4j:
+    uri: bolt://192.168.43.54:7687
+    authentication:
+      username: neo4j
+      password: neo4j666
 
 server:
   port: 8072
