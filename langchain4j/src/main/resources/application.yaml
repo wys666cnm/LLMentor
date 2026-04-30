@@ -1,26 +1,3 @@
-spring:
-  application:
-    name: LLMentorLearn_langchain4j
-  ai:
-    dashscope: # 大模型配置
-      api-key: @dashscope.api.key@
-#      embedding: # embedding（向量化配置）
-#        options:
-#          model: text-embedding-v4 # 向量模型
-#          dimensions: 768  # 向量维度（几维向量）
-#    vectorstore: # 向量数据库配置
-#      pgvector:
-#        index-type: hnsw
-#        distance-type: cosine_distance
-#        dimensions: 768
-#        max-document-batch-size: 9
-#        initialize-schema: true
-#        table-name: vector_st  # special_equipment_st
-#  datasource: # 数据源配置
-#    url: jdbc:postgresql://192.168.43.53:5433/rag_test # 记得改成你自己的
-#    username: pgvector # 记得改成你自己的
-#    password: pgvector666 # 记得改成你自己的
-
 server:
   port: 8071
   tomcat:
@@ -28,7 +5,26 @@ server:
     relaxed-path-chars: |
       \
     relaxed-query-chars: |
-      \  
+      \
+spring:
+  application:
+    name: LLMentorLearn_langchain4j
+
+langchain4j:
+  open-ai:
+    chat-model:
+      api-key: @dashscope.api.key@
+      model-name: qwen-max-latest
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      log-requests: true
+      log-responses: true
+    streaming-chat-model:
+      api-key: @dashscope.api.key@
+      model-name: qwen-max-latest
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      log-requests: true
+      log-responses: true
+
 
 logging:
   level:
