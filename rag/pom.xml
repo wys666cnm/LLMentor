@@ -68,13 +68,6 @@
             <artifactId>spring-ai-tika-document-reader</artifactId>
             <version>1.1.0</version>
         </dependency>
-
-        <!--   langchain4j     -->
-        <dependency>
-            <groupId>dev.langchain4j</groupId>
-            <artifactId>langchain4j-open-ai-spring-boot-starter</artifactId>
-            <version>1.0.0-beta3</version>
-        </dependency>
         <!-- pgvector -->
         <dependency>
             <groupId>org.springframework.ai</groupId>
@@ -103,7 +96,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-neo4j</artifactId>
         </dependency>
-
+        <!-- 引入对OpenAI的支持  -->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-openai</artifactId>
+        </dependency>
+        <!-- 引入Minion的依赖  -->
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>8.5.1</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
