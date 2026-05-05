@@ -66,8 +66,22 @@ public class PdfMultimodalProcessor {
     @Autowired
     private ChatModel chatModel;
 
+    /**
+     * MinIO服务
+     */
     @Autowired
     private MinioService minioService;
+
+    /**
+     * OpenAI API密钥
+     */
+    @Value("${spring.ai.dashscope.api-key}")
+    private String openAiApiKey;
+
+    /**
+     * 多模态Chat模型
+     */
+    private OpenAiChatModel multimodalChatModel;
 
     /**
      * 处理PDF文件，提取其中的文字和图片内容
@@ -187,11 +201,6 @@ public class PdfMultimodalProcessor {
         return text.replace("&", "&amp;").replace("<", "&lt;")
                 .replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&apos;");
     }
-
-    @Value("${spring.ai.dashscope.api-key}")
-    private String openAiApiKey;
-
-    private OpenAiChatModel multimodalChatModel;
 
     @PostConstruct
     public void init() {

@@ -1,0 +1,37 @@
+server:
+  port: 8073
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+  tomcat:
+    max-http-header-size: 16KB
+    relaxed-path-chars: |
+      \
+    relaxed-query-chars: |
+      \  
+
+spring:
+  application:
+    name: LLMentorLearn_Agent
+  ai:
+    openai: # openAI配置
+      api-key: @dashscope.api.key@
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/
+      chat:
+        options:
+          model: qwen-plus
+          temperature: 0.7
+          maxTokens: 5000
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    org.springframework.ai: DEBUG          # Spring AI 详细日志（关键）
+    org.apache.tomcat: INFO
+    org.springframework.web: DEBUG           # 打印请求路径、参数
+    org.springframework.web.servlet: DEBUG   # 打印 MVC 详细流程
+
+
