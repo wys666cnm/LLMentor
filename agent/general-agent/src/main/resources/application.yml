@@ -13,6 +13,8 @@ server:
       \  
 
 spring:
+  main:
+    web-application-type: reactive
   application:
     name: LLMentorLearn_Agent
   ai:
