@@ -662,7 +662,7 @@ public class SimpleRecActAgent {
         return new Builder();
     }
 
-    private static class Builder {
+    public static class Builder {
 
         private String name;
         private ChatModel chatModel;
