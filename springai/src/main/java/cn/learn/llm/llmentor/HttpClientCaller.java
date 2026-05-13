@@ -13,16 +13,16 @@ import java.net.http.HttpResponse;
  */
 public class HttpClientCaller {
 
-    private static final String API_KEY = "sk-db77de3431244a77b75940239d143f3f";
+    private static final String API_KEY = "sk-1e03ea92532b4ca4a8a74d91858d35fa";
 
-    private static final String API_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions";
+    private static final String API_URL = "https://api.deepseek.com/chat/completions";
 
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
         String requestBody = """
                   {
-                    "model": "qwen-plus",
+                    "model": "deepseek-chat",
                     "messages": [
                         {
                             "role": "system",

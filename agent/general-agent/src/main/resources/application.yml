@@ -18,12 +18,12 @@ spring:
   application:
     name: LLMentorLearn_Agent
   ai:
-    openai: # openAI配置
-      api-key: @dashscope.api.key@
-      base-url: https://dashscope.aliyuncs.com/compatible-mode/
+    openai:
+      api-key: sk-1e03ea92532b4ca4a8a74d91858d35fa
+      base-url: https://api.deepseek.com
       chat:
         options:
-          model: qwen-plus
+          model: deepseek-chat
           temperature: 0.7
           maxTokens: 5000
   datasource:
