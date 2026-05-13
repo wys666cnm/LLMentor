@@ -2,7 +2,11 @@ spring:
   application:
     name: LLMentorLearn_SpringAI
   ai:
-    dashscope:
-      api-key: @dashscope.api.key@
+    openai:
+      api-key: sk-1e03ea92532b4ca4a8a74d91858d35fa
+      base-url: https://api.deepseek.com
+      chat:
+        options:
+          model: deepseek-chat
 server:
   port: 8062

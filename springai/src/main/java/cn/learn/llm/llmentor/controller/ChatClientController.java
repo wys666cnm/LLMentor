@@ -1,12 +1,12 @@
 package cn.learn.llm.llmentor.controller;
 
-import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatOptions;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.chat.messages.SystemMessage;
 import org.springframework.ai.chat.messages.UserMessage;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.prompt.Prompt;
+import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +24,7 @@ import reactor.core.publisher.Flux;
 public class ChatClientController implements InitializingBean {
 
     @Autowired
-    private ChatModel dashScopeChatModel;
+    private ChatModel chatModel;
 
     private ChatClient chatClient;
 
@@ -55,14 +55,14 @@ public class ChatClientController implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        chatClient = ChatClient.builder(dashScopeChatModel)
+        chatClient = ChatClient.builder(chatModel)
                 // 实现 Logger 的 Advisor
                 .defaultAdvisors(
                         new SimpleLoggerAdvisor()
                 ).defaultSystem("请用英文回答问题")
                 // 设置 ChatClient 中 ChatModel 的 Options 参数
                 .defaultOptions(
-                        DashScopeChatOptions.builder()
+                        OpenAiChatOptions.builder()
                                 .temperature(0.7)
                                 .build()
                 )
